@@ -3,12 +3,8 @@ import { PrismaClient, Prisma } from "../app/generated/prisma/client";
 const prisma = new PrismaClient();
 
 const itemData: Prisma.itemsCreateInput[] = [
-  {
-    title: "Item 1",
-  },
-  {
-    title: "Item 2",
-  },
+  { title: "Lawn Mower" },
+  { title: "Printer" },
 ];
 
 export async function main() {
