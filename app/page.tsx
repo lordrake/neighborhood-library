@@ -1,7 +1,8 @@
 import prisma from "@/lib/prisma";
+import AuthButtons from "./components/AuthButtons";
 
 export default async function Home() {
-  const items = await prisma.items.findMany();
+  const items = await prisma.item.findMany();
   console.log(items);
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -14,6 +15,8 @@ export default async function Home() {
               <h1>{item.title}</h1>
             </div>
           ))}
+
+          <AuthButtons />
         </div>
       </main>
     </div>

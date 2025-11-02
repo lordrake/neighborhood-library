@@ -2,7 +2,7 @@ import { PrismaClient, Prisma } from "../app/generated/prisma/client";
 
 const prisma = new PrismaClient();
 
-const itemData: Prisma.itemsCreateInput[] = [
+const itemData: Prisma.ItemCreateInput[] = [
   { title: "Lawn Mower" },
   { title: "Printer" },
 ];
@@ -10,7 +10,7 @@ const itemData: Prisma.itemsCreateInput[] = [
 export async function main() {
   console.log("Starting seed...");
   for (const item of itemData) {
-    await prisma.items.create({ data: item });
+    await prisma.item.create({ data: item });
   }
   console.log("Seed completed successfully!");
 }
